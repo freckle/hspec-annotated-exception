@@ -4,7 +4,7 @@ cabal-version: 1.18
 --
 -- see: https://github.com/sol/hpack
 
-name:           haskell-library-template
+name:           hspec-annotated-exception
 version:        0.0.0.0
 synopsis:       Short synopsis here
 description:    Longer description here
@@ -13,8 +13,8 @@ description:    Longer description here
                 you can also just direct users to the README if you prefer not to take on that
                 duplication burden.
 category:       Utils
-homepage:       https://github.com/freckle/haskell-library-template#readme
-bug-reports:    https://github.com/freckle/haskell-library-template/issues
+homepage:       https://github.com/freckle/hspec-annotated-exception#readme
+bug-reports:    https://github.com/freckle/hspec-annotated-exception/issues
 maintainer:     Freckle Education
 license:        MIT
 license-file:   LICENSE
@@ -27,11 +27,11 @@ extra-doc-files:
 
 source-repository head
   type: git
-  location: https://github.com/freckle/haskell-library-template
+  location: https://github.com/freckle/hspec-annotated-exception
 
 library
   other-modules:
-      Paths_haskell_library_template
+      Paths_hspec_annotated_exception
   hs-source-dirs:
       src
   default-extensions:
@@ -76,7 +76,7 @@ test-suite readme
   type: exitcode-stdio-1.0
   main-is: README.lhs
   other-modules:
-      Paths_haskell_library_template
+      Paths_hspec_annotated_exception
   default-extensions:
       BangPatterns
       DataKinds
@@ -122,7 +122,7 @@ test-suite spec
   other-modules:
       SpecHook
       WhateverSpec
-      Paths_haskell_library_template
+      Paths_hspec_annotated_exception
   hs-source-dirs:
       test
   default-extensions:

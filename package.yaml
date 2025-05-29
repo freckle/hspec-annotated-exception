@@ -1,8 +1,8 @@
-name: haskell-library-template
+name: hspec-annotated-exception
 version: 0.0.0.0
 maintainer: Freckle Education
 category: Utils
-github: freckle/haskell-library-template
+github: freckle/hspec-annotated-exception
 synopsis: Short synopsis here
 description: |
   Longer description here

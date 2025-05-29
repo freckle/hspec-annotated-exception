@@ -46,49 +46,19 @@ when:
       - -fwrite-ide-info
 
 dependencies:
+  - annotated-exception
   - base < 5
+  - hspec
+  - lens
+  - HUnit
+  - text
+
+default-language: GHC2021
 
 default-extensions:
-  - BangPatterns
-  - DataKinds
-  - DeriveAnyClass
-  - DeriveFoldable
-  - DeriveFunctor
-  - DeriveGeneric
-  - DeriveLift
-  - DeriveTraversable
-  - DerivingStrategies
-  - FlexibleContexts
-  - FlexibleInstances
-  - GADTs
-  - GeneralizedNewtypeDeriving
   - LambdaCase
-  - MultiParamTypeClasses
   - NoImplicitPrelude
-  - NoMonomorphismRestriction
   - OverloadedStrings
-  - RankNTypes
-  - RecordWildCards
-  - ScopedTypeVariables
-  - StandaloneDeriving
-  - TypeApplications
-  - TypeFamilies
 
 library:
   source-dirs: src
-
-tests:
-  spec:
-    main: Spec.hs
-    source-dirs: test
-    ghc-options: -threaded -rtsopts "-with-rtsopts=-N"
-    dependencies:
-      #- haskell-library-template
-      - hspec
-      - hspec-junit-formatter
-
-  readme:
-    main: README.lhs
-    ghc-options: -pgmL markdown-unlit
-    dependencies:
-      - markdown-unlit

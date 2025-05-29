@@ -1,6 +1,6 @@
 {
   inputs = {
-    stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    stable.url = "github:nixos/nixpkgs/nixos-25.05";
     freckle.url = "github:freckle/flakes?dir=main";
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -42,7 +42,7 @@
           ];
 
           shellHook = ''
-            export STACK_YAML=stack.yaml
+            export STACK_YAML=stack-lts23.yaml
           '';
         };
       }

@@ -6,12 +6,10 @@ cabal-version: 1.18
 
 name:           hspec-annotated-exception
 version:        0.0.0.0
-synopsis:       Short synopsis here
-description:    Longer description here
-                .
-                Haddocks are more valuable if you reproduce the main README example here, but
-                you can also just direct users to the README if you prefer not to take on that
-                duplication burden.
+synopsis:       Hspec hook that unwraps test failures from AnnotatedException
+description:    An hspec hook that lets hspec catch and pretty-print HUnitFailure,
+                the exception that is thrown when a test assertion fails, in the
+                correct way even if it is wrapped in AnnotatedException.
 category:       Utils
 homepage:       https://github.com/freckle/hspec-annotated-exception#readme
 bug-reports:    https://github.com/freckle/hspec-annotated-exception/issues

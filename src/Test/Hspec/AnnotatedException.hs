@@ -26,6 +26,9 @@ import Test.Hspec
 -- that uses freckle-app) should add this hook to their test suite. Without it, if
 -- you end up with an @'AnnotatedException' 'HUnitFailure'@, hspec doesn't recognize
 -- it as an assertion failure and you get ugly output instead of nice output.
+--
+-- This hook does not alter whether a spec succeeds or fails; it only changes the
+-- type of exception that is thrown when an assertion fails.
 unwrapAnnotatedHUnitFailure :: Spec -> Spec
 unwrapAnnotatedHUnitFailure = around_ $ mapException annotateHUnitFailure
 

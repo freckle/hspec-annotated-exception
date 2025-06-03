@@ -1,15 +1,13 @@
-name: haskell-library-template
+name: hspec-annotated-exception
 version: 0.0.0.0
 maintainer: Freckle Education
 category: Utils
-github: freckle/haskell-library-template
-synopsis: Short synopsis here
+github: freckle/hspec-annotated-exception
+synopsis: Hspec hook that unwraps test failures from AnnotatedException
 description: |
-  Longer description here
-
-  Haddocks are more valuable if you reproduce the main README example here, but
-  you can also just direct users to the README if you prefer not to take on that
-  duplication burden.
+  An hspec hook that lets hspec catch and pretty-print HUnitFailure,
+  the exception that is thrown when a test assertion fails, in the
+  correct way even if it is wrapped in AnnotatedException.
 
 extra-doc-files:
   - README.md
@@ -46,49 +44,19 @@ when:
       - -fwrite-ide-info
 
 dependencies:
+  - annotated-exception
   - base < 5
+  - hspec
+  - lens
+  - HUnit
+  - text
+
+default-language: GHC2021
 
 default-extensions:
-  - BangPatterns
-  - DataKinds
-  - DeriveAnyClass
-  - DeriveFoldable
-  - DeriveFunctor
-  - DeriveGeneric
-  - DeriveLift
-  - DeriveTraversable
-  - DerivingStrategies
-  - FlexibleContexts
-  - FlexibleInstances
-  - GADTs
-  - GeneralizedNewtypeDeriving
   - LambdaCase
-  - MultiParamTypeClasses
   - NoImplicitPrelude
-  - NoMonomorphismRestriction
   - OverloadedStrings
-  - RankNTypes
-  - RecordWildCards
-  - ScopedTypeVariables
-  - StandaloneDeriving
-  - TypeApplications
-  - TypeFamilies
 
 library:
   source-dirs: src
-
-tests:
-  spec:
-    main: Spec.hs
-    source-dirs: test
-    ghc-options: -threaded -rtsopts "-with-rtsopts=-N"
-    dependencies:
-      #- haskell-library-template
-      - hspec
-      - hspec-junit-formatter
-
-  readme:
-    main: README.lhs
-    ghc-options: -pgmL markdown-unlit
-    dependencies:
-      - markdown-unlit

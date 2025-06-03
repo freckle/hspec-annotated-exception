@@ -1,0 +1,57 @@
+cabal-version: 1.18
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           hspec-annotated-exception
+version:        0.0.0.0
+synopsis:       Hspec hook that unwraps test failures from AnnotatedException
+description:    An hspec hook that lets hspec catch and pretty-print HUnitFailure,
+                the exception that is thrown when a test assertion fails, in the
+                correct way even if it is wrapped in AnnotatedException.
+category:       Utils
+homepage:       https://github.com/freckle/hspec-annotated-exception#readme
+bug-reports:    https://github.com/freckle/hspec-annotated-exception/issues
+maintainer:     Freckle Education
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    package.yaml
+extra-doc-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/freckle/hspec-annotated-exception
+
+library
+  exposed-modules:
+      Test.Hspec.AnnotatedException
+  other-modules:
+      Paths_hspec_annotated_exception
+  hs-source-dirs:
+      src
+  default-extensions:
+      LambdaCase
+      NoImplicitPrelude
+      OverloadedStrings
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe
+  build-depends:
+      HUnit
+    , annotated-exception
+    , base <5
+    , hspec
+    , lens
+    , text
+  default-language: GHC2021
+  if impl(ghc >= 9.8)
+    ghc-options: -Wno-missing-role-annotations -Wno-missing-poly-kind-signatures
+  if impl(ghc >= 9.2)
+    ghc-options: -Wno-missing-kind-signatures
+  if impl(ghc >= 8.10)
+    ghc-options: -Wno-missing-safe-haskell-mode -Wno-prepositive-qualified-module
+  if impl(ghc >= 8.8)
+    ghc-options: -fwrite-ide-info
